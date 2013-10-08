@@ -11,3 +11,5 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'batman-rails'
