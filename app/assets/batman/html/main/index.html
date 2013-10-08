@@ -1,26 +1,17 @@
-<div class="intro">
-  <div class="wrapper">
-    <div class="row clearfix">
-      <div class="span24 intro-message">
-        <h2>You're set up with batman-rails!</h2>
-        <h3>This page aims to be a collection of everything that batman.js is capable of. Over time it will grow to include more comprehensive examples, in addition to live applications using batman.js. But most of that isn't done yet. Hooray!</h3>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="header">
   <div class="wrapper clearfix">
     <h1 class="header-site-title"><a href="/">
-      <div class="logo"></div>batman.js
+      <div class="logo"></div>Expensely
     </a></h1>
 
     <div class="header-nav clearfix">
       <nav class="nav-top">
         <ul class="nav-primary">
-          <li class="active"><a href="/">Overview</a></li>
-          <li><a href="http://batmanjs.org/examples.html" target="_blank">Examples</a></li>
-          <li><a href="http://batmanjs.org/docs/index.html" target="_blank">Documentation</a></li>
+          <li class="active"><a>My Expenses</a></li>
+          <li><a>Reports</a></li>
+          <li><a>Settings</a></li>
         </ul>
       </nav>
     </div>
@@ -35,19 +26,9 @@
       <div class="wrapper clearfix">
         <div class="row clearfix ppt">
 
-          <div class="span14">
-            <h4>Generate your resources</h4>
-            <p>Everything in batman.js has a proper place, driven by batman.js's conventions. By default with batman-rails, your app lives in app/assets/batman. A great way to get started is using the automatic generators to add some of your resources.</p><br />
-            <p>More info on <a href="http://batmanjs.org/docs/structure.html" target="_blank">directory structure</a></p>
-          </div>
-
-          <div class="span10">
+          <div class="span24">
+            <h4>Create an expense</h4>
             <div class="box featured">
-              <code>
-                rails generate batman:scaffold Post<br />
-                rails generate batman:model Product<br />
-                rails generate batman:view player<br />
-              </code>
             </div>
           </div>
 
@@ -58,42 +39,31 @@
     <div class="plain-row">
       <div class="wrapper clearfix">
         <div class="row clearfix ppb">
-          <div class="span14">
-            <h4>Add your bindings</h4>
-            <p>batman.js has a powerful system to automatically bind your HTML to data in your app and models. You can use data-* attributes to tell a node what type of stuff it cares about. Here's some simple examples.</p><br />
-            <p>More info on <a href="http://batmanjs.org/docs/bindings.html" target="_blank">data bindings</a></p>
+          <div class="span24">
+            <h4>My expenses</h4>
+            <table cellspacing="0">
+              <tr>
+                <th>Total Amount</th>
+                <th>Currency</th>
+                <th>HST/GST</th>
+                <th>Expense Incurred Date</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Attached</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>$23.41</td>
+                <td>CAD</td>
+                <td>$1.91</td>
+                <td>August 1, 2013</td>
+                <td>Lots of yummy lunches in Toronto</td>
+                <td>sdf</td>
+                <td>sdf</td>
+                <td></td>
+              </tr>
+            </table>
           </div>
-
-          <div class="span10">
-            <div class="box featured">
-              <div><label>First Name:</label><input type="text" data-bind="firstName"></div>
-              <div><label>Last Name:</label><input type="text" data-bind="lastName"></div>
-              <div data-showif="hasName">Hello, my name is <span data-bind="fullName"></span></div>
-              <div><button data-event-click="resetName">Reset name</button></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="alt-row">
-      <div class="wrapper clearfix">
-        <div class="row clearfix ppb">
-          <div class="span14">
-            <h4>Connect to Rails</h4>
-            <p>batman-rails includes a StorageAdapter class that makes communicating with your Rails API extremely easy. First set the storageKey to tell it which API endpoint to use, then specify that the model should persist with the RailsStorage storage adapter.</p><br />
-            <p>More info on <a href="http://batmanjs.org/docs/models.html" target="_blank">models</a></p>
-          </div>
-
-          <div class="span10">
-            <div class="box featured">
-              <pre><code>class MyApp.Product extends Batman.Model
-  @storageKey: 'products'
-  @persist Batman.RailsStorage</code></pre>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -444,4 +414,41 @@
     }
   }
 
+</style>
+
+<style type="text/css" media="screen">
+table {
+  margin:20px;
+}
+table th {
+  padding:21px 25px 22px 25px;
+  background: #ededed;
+}
+table th:first-child {
+  text-align: left;
+  padding-left:20px;
+}
+table tr {
+  text-align: center;
+  padding-left:20px;
+}
+table td:first-child {
+  text-align: left;
+  padding-left:20px;
+  border-left: 0;
+}
+table td {
+  padding:18px;
+  border-top: 1px solid #ffffff;
+  border-bottom:1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+
+  background: #fafafa;
+}
+table tr.even td {
+  background: #f6f6f6;
+}
+table tr:last-child td {
+  border-bottom:0;
+}
 </style>
