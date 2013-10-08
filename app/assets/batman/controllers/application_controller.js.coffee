@@ -1,0 +1,1 @@
+class Expensely.ApplicationController extends Batman.Controller
