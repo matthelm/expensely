@@ -18,6 +18,36 @@
       </div>
     </div>
 
+    <div class="plain-row">
+      <div class="wrapper clearfix">
+        <div class="row clearfix ppb">
+          <div class="span24">
+            <h4>My expenses</h4>
+            <table cellspacing="0">
+              <tr>
+                <th>Total Amount</th>
+                <th>Currency</th>
+                <th>HST/GST</th>
+                <th>Total CAD</th>
+                <th>Category</th>
+                <th>Incurred Date</th>
+                <th>Description</th>
+              </tr>
+              <tr data-foreach-expense="expenses">
+                <td data-bind="expense.total_amount | money"></td>
+                <td data-bind="expense.currency"></td>
+                <td data-bind="expense.total_tax | money"></td>
+                <td data-bind="expense.total_cad | money"></td>
+                <td data-bind="expense.category.title"></td>
+                <td data-bind="expense.incurred_at | date"></td>
+                <td data-bind="expense.description | default '&ndash;'"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 <!-- End content-wrapper -->
