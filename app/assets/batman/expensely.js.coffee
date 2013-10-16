@@ -16,20 +16,11 @@
 Batman.config.pathToHTML = '/assets/html'
 
 class Expensely extends Batman.App
-  # @resources 'products'
-  # @resources 'discounts', except: ['edit']
-  # @resources 'customers', only: ['new', 'show']
+  @route 'reports', 'reports#index'
+  @route 'settings', 'settings#index'
 
-  # @resources 'blogs', ->
-  #   @resources 'articles'
+  @resources 'expenses'
 
-  # @resources 'pages', ->
-  #   @collection 'count'
-  #   @member 'duplicate'
-
-  # @route 'apps', 'apps#index'
-  # @route 'apps/private', 'apps#private', as: 'privateApps'
-
-  @root 'main#index'
+  @root 'expenses#index'
 
 (global ? window).Expensely = Expensely
