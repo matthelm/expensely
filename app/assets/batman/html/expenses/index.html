@@ -68,6 +68,7 @@
                 <th>Category</th>
                 <th>Incurred Date</th>
                 <th>Description</th>
+                <th></th>
               </tr>
               <tr data-foreach-expense="expenses">
                 <td data-bind="expense.total_amount | money"></td>
@@ -77,6 +78,7 @@
                 <td data-bind="expense.category.title"></td>
                 <td data-bind="expense.incurred_at | date"></td>
                 <td data-bind="expense.description | default '&ndash;'"></td>
+                <td><a data-route="expense">edit</a></td>
               </tr>
             </table>
           </div>

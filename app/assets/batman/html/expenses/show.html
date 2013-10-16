@@ -1,0 +1,59 @@
+<div data-partial="shared/sidebar"></div>
+
+<!-- Begin content-wrapper -->
+<div id="content-wrapper">
+  <div id="content">
+
+    <div class="alt-row">
+      <div class="wrapper clearfix">
+        <div class="row clearfix ppt">
+
+          <div class="span24">
+            <h4>My expense</h4>
+            <div class="box featured">
+              <form data-formfor-expense="expense" data-event-submit="saveExpense">
+                <label for="expense-total-amount">Total Amount</label>
+                <input id="expense-total-amount" type="text" data-bind="expense.total_amount | money" />
+                <br />
+
+                <label for="expense-currency">Currency</label>
+                <select id="expense-currency" type="text" data-bind="expense.currency">
+                  <option value="CAD">CAD</option>
+                  <option value="USD">USD</option>
+                </select>
+                <br />
+
+                <label for="expense-total-tax">HST/GST</label>
+                <input id="expense-total-tax" type="text" data-bind="expense.total_tax | money" />
+                <br />
+
+                <label for="expense-total-tax">Total CAD</label>
+                <input id="expense-total-tax" type="text" data-bind="expense.total_cad | money" />
+                <br />
+
+                <label for="expense-category">Category</label>
+                <select id="expense-category" data-bind="expense.category.id">
+                  <option data-foreach-option="categories" data-bind="option.title" data-bind-value="option.id"></option>
+                </select>
+                <br />
+
+                <label for="expense-incurred-at">Incurred Date</label>
+                <input id="expense-incurred-at" type="date" data-bind="expense.incurred_at" />
+                <br />
+
+                <label for="expense-description">Description</label>
+                <textarea id="expense-description" data-bind="expense.description"></textarea>
+                <br />
+
+                <input type="submit" value="Save Expense" />
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End content-wrapper -->
