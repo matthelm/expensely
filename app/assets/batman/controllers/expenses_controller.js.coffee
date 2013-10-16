@@ -32,6 +32,11 @@ class Expensely.ExpensesController extends Expensely.ApplicationController
       else
         @redirect '/'
 
+  deleteExpense: (node, event, context) ->
+    context.get('expense').destroy (err, expense) =>
+      if err
+        throw "Unable to delete"
+
   _newExpense: ->
     today = new Date
     incurred_at = "#{today.getUTCFullYear()}-#{today.getUTCMonth() + 1}-#{today.getUTCDate()}"
