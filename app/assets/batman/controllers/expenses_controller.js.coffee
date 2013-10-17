@@ -41,4 +41,7 @@ class Expensely.ExpensesController extends Expensely.ApplicationController
     today = new Date
     incurred_at = "#{today.getUTCFullYear()}-#{today.getUTCMonth() + 1}-#{today.getUTCDate()}"
 
-    @set('expense', new Expensely.Expense(currency: 'CAD', incurred_at: incurred_at))
+    expense = new Expensely.Expense(currency: 'CAD', incurred_at: incurred_at)
+    category = Expensely.Category.get('loaded.first')
+    expense.set('category', category)
+    @set('expense', expense)
