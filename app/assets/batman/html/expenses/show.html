@@ -13,7 +13,7 @@
             <div class="box featured">
               <form data-formfor-expense="expense" data-event-submit="saveExpense">
                 <label for="expense-total-amount">Total Amount</label>
-                <input id="expense-total-amount" type="text" data-bind="expense.total_amount | money" />
+                <input id="expense-total-amount" type="text" data-bind="expense.total_amount" />
                 <br />
 
                 <label for="expense-currency">Currency</label>
@@ -24,11 +24,11 @@
                 <br />
 
                 <label for="expense-total-tax">HST/GST</label>
-                <input id="expense-total-tax" type="text" data-bind="expense.total_tax | money" />
+                <input id="expense-total-tax" type="text" data-bind="expense.total_tax" />
                 <br />
 
                 <label for="expense-total-tax">Total CAD</label>
-                <input id="expense-total-tax" type="text" data-bind="expense.total_cad | money" />
+                <input id="expense-total-tax" type="text" data-bind="expense.total_cad" />
                 <br />
 
                 <label for="expense-category">Category</label>
